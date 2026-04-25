@@ -30,13 +30,3 @@ services:
 
       # Cluster ID (must be same every restart if persisted)
       CLUSTER_ID: "kraft-cluster-1"
-
-  kafdrop:
-    image: obsidiandynamics/kafdrop
-    container_name: kafdrop
-    depends_on:
-      - kafka
-    ports:
-      - "9000:9000"
-    environment:
-      KAFKA_BROKERCONNECT: "kafka:9092"
